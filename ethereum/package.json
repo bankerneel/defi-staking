@@ -1,0 +1,28 @@
+{
+  "name": "blockchain-defi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoluLab/blockchain-defi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoluLab/blockchain-defi/issues"
+  },
+  "homepage": "https://github.com/SoluLab/blockchain-defi#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.0.42",
+    "dotenv": "^8.2.0",
+    "ganache-cli": "^6.10.1",
+    "openzeppelin-solidity": "^3.1.0",
+    "solc": "^0.6.2",
+    "truffle-flattener": "^1.4.4",
+    "truffle-plugin-verify": "^0.3.11"
+  }
+}

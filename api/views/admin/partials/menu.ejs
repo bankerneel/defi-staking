@@ -1,0 +1,45 @@
+<div id="wrapper">
+    <nav class="navbar-default navbar-expand-lg  navbar-static-side left-main-menu" role="navigation">
+        <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+           <li class="nav-header">
+              <div class="dropdown profile-element">
+                 <div class="logo-panel text-center float-n">
+                    <a href="/admin/transaction"> <img src="img/logo.png" alt="" width="150"></a>
+                 </div>
+              </div>
+              <div class="logo-element">
+                 <a href="transaction.html"> <img src="img/DeFiXy-Icon.png" alt=""  width="150"></a>
+              </div>
+           </li>
+           <li class="<%= (activeBar == 'transaction') ? 'active' : '' %>" >
+              <a href="/admin/transaction" title="transaction"><i class="fa fa-exchange" aria-hidden="true"></i> <span class="nav-label">Transaction</span></a>
+           </li>
+           <li class="<%= (activeBar == 'settings') ? 'active' : '' %>">
+              <a href="/admin/settings" title="Settings"><i class="fa fa-cog" aria-hidden="true"></i> <span class="nav-label">Settings</span></a>
+           </li>
+          
+        </ul>
+     </div>
+     </nav>
+     <div id="page-wrapper" class="dark-bg">
+        <div class="row top-menu2">
+                   <nav class="navbar navbar-static-top dark-bg-header top-menu" role="navigation" style="margin-bottom: 0">
+                      <div class="navbar-header">
+                         <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                         <!-- <form role="search" class="navbar-form-custom" action="search_results.html"> -->
+                         <!--  <div class="form-group">
+                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                            </div>
+                            </form> -->
+                      </div>
+                     <ul class="nav navbar-top-links navbar-right">
+                            <li class="user-info-box welcome tooltipa">
+                                <div class="dropdown d-flex"> 
+                                    <a href="/admin/logout" >
+                                    <span class="clear"> <span class="block m-t-xs">
+                                    </span> <b><span class="text-muted text-xs block">Logout</span> </b></span> </a>
+                            </li>
+                        </ul>
+                   </nav>
+                </div>

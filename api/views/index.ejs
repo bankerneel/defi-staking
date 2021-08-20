@@ -1,0 +1,494 @@
+<%- include('./partials/header') %> <%- include('./partials/menu') %>
+
+<section id="intro" class="clearfix bg-img">
+	<div class="container d-flex h-100 my-class pos-rel">
+		<div class="row justify-content-center align-self-center">
+			<div class="col-md-12 col-lg-8 intro-info order-md-first order-last">
+				<h2>
+					<span> DeFiXy Protocol</span><br />The future of Decentralization<br />
+					Building an Amazon-like Marketplace for Crypto-Assets
+				</h2>
+				<!--    <div class="text-center">
+                     <a href="#about" class="btn-get-started scrollto">Get Started</a>
+                     </div> -->
+			</div>
+			<div class="container pb-5 mt-3 mb-5" id="my-class">
+				<div class="row justify-content-center">
+					<div class="col-lg-10">
+						<div class="row justify-content-between">
+							<div class="col-lg-5 col-md-6" id="my-box1">
+								<div class="about-content box1">
+									<h2 class="text-left text-uppercase mb-2">Staking is live</h2>
+									<h3>
+										<b
+											>Commited stakers earn up to
+											<span class="color-blue">45%</span> in <br />staking
+											rewards
+										</b>
+									</h3>
+
+									<p class="text-left mb-2 pt-0">Stake DFX now</p>
+									<div class="text-left" style="margin-bottom: 2px">
+										<a
+											data-toggle="modal"
+											data-target="#dashborad"
+											class="bordera"
+										>
+											<img src="web/img/img-logo.png" width="200"
+										/></a>
+										<button
+											class="btn btn-primary btn-lg mb-3"
+											id="connectButton"
+											onclick='<%= session.isLoggedIn ? "redirectToDashboard()" : "connectToMetaMask()" %>'
+										>
+											<%= session.isLoggedIn ? 'Go to Dashboard' : 'Connect' %>
+										</button>
+										<!-- {{!-- <h4>Contract Address: <span id="accounts"></span></h4> --}} -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-5 col-md-6" id="my-box">
+								<div class="about-content box1">
+									<h2 class="text-left mb-2">
+										<img src="web/img/logo.png" width="100" /><br />
+									</h2>
+									<!-- <h2 class="text-left mb-1">DeFiXy</h2> -->
+									<h3>
+										<span>Circulating Supply:</span
+										><img src="web/img/DeFiXy-Icon.png" width="20" /> <%=
+										parseFloat(4000000) + parseFloat(contractDetail.totalTokenRewards.toFixed(2)) %> DFX
+									</h3>
+									<h3><span> Price:</span> $0.50</h3>
+									<h3>
+										<span>Total Staked: </span>
+										<img src="web/img/DeFiXy-Icon.png" width="20" /> <%=
+										contractDetail.totalStakedTokens %> DFX
+									</h3>
+									<h3>
+										<span> Rewards Claimed: </span
+										><img src="web/img/DeFiXy-Icon.png" width="20" /> <%=
+										contractDetail.totalTokenRewards.toFixed(2) %> DFX
+									</h3>
+									<h3 class="mb-3">
+										<span>Contract:</span> <%=
+										contractDetail.tokenContractAddress %>
+									</h3>
+									<!-- <h3><span>Total Supply:</span><img src="web/img/DeFiXy-Icon.png" width="20"> 100,000,000 DFX</h3> -->
+
+									<!-- <p class="my-a">Staked(wrt. Circulating Supply)</p> -->
+
+									<!-- <p class="my-a mb-0">Rewards that have been Claimed/ Paid-Out</p> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- #intro -->
+<main id="main">
+	<!--==========================
+            About Us Section
+            ============================-->
+	<section id="about" class="bg-img1">
+		<div class="container pos-rel">
+			<!-- <h2 class="text-center text-uppercase"><b>Where to get Tokens?</b></h2> -->
+			<div class="row justify-content-center">
+				<div class="col-lg-12 col-md-12">
+					<div class="about-content text-center">
+						<h3>
+							<span>DeFiXy Protocol </span><br />
+
+							A Bridge between Fiat-driven Economies and the Crypto Space
+						</h3>
+						<p class="mb-2"><b>learn more</b></p>
+						<div>
+							<a
+								href="/whitepaper"
+								class="btn-primary btn font-28"
+								target="_blank"
+								>Whitepaper</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- #about -->
+	<!--==========================
+            Services Section
+            ============================-->
+	<section id="services" class="section-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+					<div class="box">
+						<div><img src="web/img/Dynamic Stacking.png" /></div>
+						<h4 class="title"><a href="">Dynamic Staking</a></h4>
+						<p class="description name-height text-center">
+							Our staking provision employs a Proof of Committment (PoC)
+							consensus, committed stakers enjoy great staking rewards. Future
+							integration of staking solutions for competitive blockchain
+							projects. DFX Staking Live
+						</p>
+						<a href="<%= session.isLoggedIn ? "/dashboard" : "/#intro" %>" class="btn btn-primary mt-3 btn-primarya wid-100"
+							>Stake now</a
+						>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+					<div class="box">
+						<div><img src="web/img/DeFi-Services.png" /></div>
+						<h4 class="title"><a href="">DeFi Services</a></h4>
+						<p class="description text-center">
+							A user-friendly DeFi outlet. Users can lend their assets & enjoy
+							unparalleled ROIs. User can access Collateralized loans, lower
+							rates depending on asset blend ratio.
+						</p>
+						<a href="#" class="btn btn-primary mt-3 wid-100 disabled"
+							>Coming Soon</a
+						>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+					<div class="box">
+						<div><img src="web/img/P2P Marketplace.png" /></div>
+						<h4 class="title"><a href="">P2P Marketplace</a></h4>
+						<p class="description text-center">
+							A decentralized P2P Amazon-like Marketplace. User can not only
+							trade/barter assets, they can setup mini marketplace (kiosk) &
+							provide their own custom products. Mini kiosks with great nominal
+							collateral can manage assets for inexperience users.
+						</p>
+						<a href="#" class="btn btn-primary mt-3 wid-100 disabled"
+							>Coming Soon</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- #services -->
+	<!--==========================
+            Why Us Section
+            ============================-->
+	<section id="why-us" class="wow fadeIn pb-0">
+		<div class="container-fluid" id="content">
+			<header class="section-header">
+				<h3 class="pb-3">ROAD MAP</h3>
+			</header>
+			<div class="text-center">
+				<a href="#bottom" id="top" class="scroll-down" address="true"></a>
+			</div>
+			<div class="timeline-a">
+				<div class="timeline-b">
+					<div class="timeline">
+						<ul>
+							<li>
+								<div class="time">
+									<span>April - June 2020</span>
+								</div>
+								<div class="content">
+									<h3>Market Research and Analysis</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>May - July 2020</span>
+								</div>
+								<div class="content">
+									<h3>Concept and Technology Design</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>May - Aug 2020</span>
+								</div>
+								<div class="content">
+									<h3>Implementation of <br />α-Stake</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>July - Sept 2020</span>
+								</div>
+								<div class="content">
+									<h3>Testing and Launch of <br />α-Stake</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>Sept - Dec 2020</span>
+								</div>
+								<div class="content">
+									<h3>Expansion, Marketing & Exchange listing</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>Oct - Q1 2020</span>
+								</div>
+								<div class="content">
+									<h3>Platform Upgrade</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>May - Dec 2020</span>
+								</div>
+								<div class="content">
+									<h3>Development of β-Stake Mechanism</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>Oct - Dec 2020</span>
+								</div>
+								<div class="content">
+									<h3>Implementation and Integration of DeFi</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>Nov - Q1 2021</span>
+								</div>
+								<div class="content">
+									<h3>Testing and Launch of DeFi</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>Q1 - Q3 2021</span>
+								</div>
+								<div class="content">
+									<h3>Implementation and Integration of P2P Market</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>Q1 - Q3 2021</span>
+								</div>
+								<div class="content">
+									<h3>Integration of Fiat Gateway</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>Q2 - Q4 2021</span>
+								</div>
+								<div class="content">
+									<h3>Testing and Launch of P2P Market</h3>
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									<span>Q4 2021</span>
+								</div>
+								<div class="content">
+									<h3>
+										Further Development, Integration of Direct payment system
+									</h3>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<a href="#top" id="bottom" class="scroll-down1" address="true"></a>
+		</div>
+	</section>
+
+	<!--==========================
+            Frequently Asked Questions Section
+            ============================-->
+	<section id="faq" class="pt-5">
+		<div class="container">
+			<header class="section-header">
+				<h3>Frequently Asked Questions</h3>
+				<!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p> -->
+			</header>
+			<ul id="faq-list" class="wow fadeInUp">
+				<li>
+					<a data-toggle="collapse" class="collapsed" href="#faq1"
+						>Q 1: What is DeFiXy?<i class="ion-android-remove"></i
+					></a>
+					<div id="faq1" class="collapse show" data-parent="#faq-list">
+						<p>
+							DeFiXy protocol is an Amazon-like decentralized marketplace for
+							Crypto-Asset and other decentralized products. The main features
+							that are offered include a p2p marketplace where users can not
+							only trade/barter crypto-assets but they can also build their own
+							mini-kiosks and offer custom services. Secondly, DeFi services,
+							where lenders can enjoy great ROIs on their assets and borrowers
+							enjoy as low as zero interest rates on collateralized loans.
+							Interest rates on loan depend on factors like asset blend ratio
+							and lockup thresholds and are computed optimally such that users
+							enjoy the best rates.
+						</p>
+					</div>
+				</li>
+				<li>
+					<a data-toggle="collapse" href="#faq2" class="collapsed"
+						>Q 2: What make DeFiXy Protocol different from competitors?
+						<i class="ion-android-remove"></i
+					></a>
+					<div id="faq2" class="collapse" data-parent="#faq-list">
+						<p>
+							As the mission here is to bridge the gap between fiat-economies
+							and the crypto space and to also bank the unbanked, DeFiXy
+							protocols offer easy to use solutions both in trading crypto
+							products and in DeFi. Our dual-layer marketplace allows
+							inexperience users to trade crypto without the complexity involved
+							and our dynamic staking algorithm allows lenders enjoy
+							unparalleled ROIs and borrowers enjoy as low as zero interest
+							rates on loans.
+						</p>
+					</div>
+				</li>
+				<li>
+					<a data-toggle="collapse" href="#faq3" class="collapsed"
+						>Q 3: How do Alpha-staking works? <i class="ion-android-remove"></i
+					></a>
+					<div id="faq3" class="collapse" data-parent="#faq-list">
+						<p>
+							Our alpha-staking program is designed for the benefit of our early
+							investors. Those who decides to stake their tokens can enjoy up to
+							a yearly rewards rate of 45%. Stakers can claim and unstake
+							anytime, there is no minimum or maximum amount that can be staked
+							and the minimum amount that can be claimed is 0.5 DFX.
+						</p>
+					</div>
+				</li>
+				<li>
+					<a data-toggle="collapse" href="#faq4" class="collapsed"
+						>Q 4: How to the DeFiXy protocol’s technology works?
+
+						<i class="ion-android-remove"></i
+					></a>
+					<div id="faq4" class="collapse" data-parent="#faq-list">
+						<p>
+							To learn more about out technology, please read our whitepaper, it
+							can be found in the “about us” section.
+						</p>
+					</div>
+				</li>
+				<li>
+					<a data-toggle="collapse" href="#faq5" class="collapsed"
+						>Q 5: What is the best way to contact the team?
+
+						<i class="ion-android-remove"></i
+					></a>
+					<div id="faq5" class="collapse" data-parent="#faq-list">
+						<p>
+							If you are in need of any support or you have inquiries, you can
+							reach out to the team via email at support@defixy.com. You can
+							also get in touch with us via our social media pages.
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!--==========================
+            Buy DFX  Section
+             ============================-->
+	<section id="call-to-action" class="wow fadeInUp">
+		<div class="container-fluid">
+			
+			<div class="row justify-content-center">
+				<div class="col-lg-10  col-md-12">
+					<div class="row">
+						
+						<div class="col-lg-5 text-left">
+							<h3 class="cta-title text-uppercase">Token Sale Information</h2>
+							<ul>
+								<li><p class="cta-text">Token Sale Period: 9th - 30th Nov. 2020</p></li>
+								<li><p class="cta-text">Token Price: Approx. $0.50</p></li>
+								<li><p class="cta-text">Sales Allocation: <%=
+										parseFloat(4000000) + parseFloat(contractDetail.totalTokenRewards.toFixed(2)) %> DFX</p></li>
+								<li><p class="cta-text">Contract: <small> <%=
+										contractDetail.tokenContractAddress %></small></p></li>
+							</ul>
+						</div>
+						<div class="col-lg-4 text-left">
+							<h3 class="cta-title text-left text-uppercase">JOIN TOKEN SALE ON</h2>
+							<div class="cta-btn-container mt-5 justify-content-start text-left">
+								<a class="cta-btn align-middle m-0 text-center" href="https://exchange.defixy.com/" target="_blank"
+									>DeFiXy MINI EXCHANGE</a
+								>
+							</div>
+						</div>
+						<div class="col-lg-3 text-left">
+							<h3 class="cta-title ">DeFiXy TOKEN LISTING</h2>
+							<div class="text-left">
+								<p class="cta-text">UNISWAP LISTING: SOON</p>
+								<p class="cta-text">CEX LISTINGS: SOON</p>
+							</div>
+						</div>
+						<!-- <div class="col-lg-4 text-center text-lg-left">
+							<p class="cta-text">Available on</p>
+							<ul>
+								<li>Uniswap and CEX after token Issuance</li>
+								<!-- <li>Coinbase</li>
+                                <li>Poloniex</li>
+                                <li>Kucoin</li>
+                                <li>Binance</li>
+                                <li>Cex</li>
+                                <li>Poloniex</li>
+							</ul>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- #call-to-action -->
+	<section
+		id="why-us"
+		class="wow fadeIn mt-0 pt-3 pb-4"
+		style="visibility: visible; animation-name: fadeIn"
+	>
+		<div class="container-fluid">
+			<div class="row counters" id="my-class">
+				<div class="col-lg-3 col-6 col-md-6 col-xs-6 col-sm-6 text-center">
+					<div class="box">
+						<span>Circulating Supply</span>
+						<p>
+							<img src="web/img/DeFiXy-Icon.png" width="20" /> <%= parseFloat(4000000) +
+							parseFloat(contractDetail.totalTokenRewards.toFixed(2)) %> DFX
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-6 col-md-6 col-xs-6 col-sm-6 text-center">
+					<div class="box">
+						<span>Staking Rewards Rate</span>
+						<p><img src="web/img/DeFiXy-Icon.png" width="20" /> 15% to 45%</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-6 col-md-6 col-xs-6 col-sm-6 text-center">
+					<div class="box">
+						<span>Total Amount Staked</span>
+						<p>
+							<img src="web/img/DeFiXy-Icon.png" width="20" /> <%=
+							contractDetail.totalStakedTokens %> DFX
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-6 col-md-6 col-xs-6 col-sm-6 text-center">
+					<div class="box">
+						<span>Rewards Claimed</span>
+						<p>
+							<img src="web/img/DeFiXy-Icon.png" width="20" /> <%=
+							contractDetail.totalTokenRewards.toFixed(2) %> DFX
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+<%- include('./partials/footer') %>

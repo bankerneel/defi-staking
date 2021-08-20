@@ -1,0 +1,12 @@
+ethereum/node_modules
+ethereum/package-lock.json
+api/package-lock.json
+api/node_modules
+api/logs
+ethereum/build
+ethereum/flat*
+api/.env
+api/certificate.crt
+api/defy.key
+ethereum/.env
+api/.vscode/

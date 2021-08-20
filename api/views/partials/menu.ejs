@@ -1,0 +1,57 @@
+<body>
+	<!--==========================  Header  ============================-->
+	<header id="header" class="clearfix">
+		<div class="container">
+			<div class="logo float-left">
+				<!-- Uncomment below if you prefer to use an image logo -->
+				<!-- <h1 class="text-light"><a href="#intro" class="scrollto"><span>Rapid</span></a></h1> -->
+				<a
+					href="<% activeBar == 'dashboard' ? '/dashboard' : '/' %>"
+					class="scrollto"
+					><img src="web/img/logo.png" alt="" class="img-fluid"
+				/></a>
+			</div>
+			<nav class="main-nav float-right d-none d-lg-block">
+				<ul>
+					<li class="active"><a href="/">Home</a></li>
+					<% if(activeBar != 'dashboard'){ %>
+					<li><a href="/#about">About Us</a></li>
+					<li><a href="/#why-us">Road Map</a></li>
+					<li><a href="/#faq">FAQ</a></li>
+					<li><a href="/#call-to-action">Buy DFX</a></li>
+					<li><a href="<%= session.isLoggedIn ? "/dashboard" : "/#intro" %>">Stake DFX</a></li>
+					<% } %>
+				</ul>
+			</nav>
+			<!-- main-nav -->
+		</div>
+	</header>
+	<input type="hidden" id="accountId" value="<%= session.accountId %>" />
+	<div
+		class="modal fade"
+		id="network-change-modal"
+		tabindex="-1"
+		role="dialog"
+		aria-labelledby="exampleModalLabel"
+		aria-hidden="true"
+		data-backdrop="static"
+		data-keyboard="false"
+	>
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header text-center border-bottom-0"></div>
+				<div class="pad-20">
+					<i
+						class="fa fa-exclamation-circle"
+						aria-hidden="true"
+						style="font-size: 48px; color: red"
+					></i>
+					<h2 class="mb-0">Alert!</h2>
+					<p class="pl-2 pr-2">
+						You are connected with the Mainnet, Please Connect with Ropsten Testnet !!
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
